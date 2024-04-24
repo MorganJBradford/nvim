@@ -13,5 +13,8 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
     spec = "soasc.lazy",
-    change_detection = { notify = false }
+    change_detection = { notify = false },
+    git = {
+        timeout = 420
+    }
 })
