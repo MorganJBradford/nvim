@@ -29,6 +29,7 @@ return {
                 "lua_ls",
                 "rust_analyzer",
                 "tsserver",
+                "clangd"
             },
             handlers = {
                 function(server_name) -- default handler (optional)
@@ -87,5 +88,15 @@ return {
                 prefix = "",
             },
         })
+
+        vim.api.nvim_create_user_command("DiagnosticsToggle", function()
+            local config = vim.diagnostic.config
+            local vt = config().virtual_text
+            config {
+                virtual_text = not vt,
+                underline = not vt,
+                signs = not vt,
+            }
+        end, { desc = "toggle diagnostics" })
     end
 }
