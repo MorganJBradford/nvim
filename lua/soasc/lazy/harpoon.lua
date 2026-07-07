@@ -1,6 +1,7 @@
 -- soasc/lazy/harpoon.lua
 return {
     "ThePrimeagen/harpoon",
+    branch = "harpoon2",
     config = function()
         local harpoon = require("harpoon")
 
